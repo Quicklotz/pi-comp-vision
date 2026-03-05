@@ -1,0 +1,38 @@
+{
+  "name": "quickvisionz-server",
+  "version": "1.0.0",
+  "description": "QuickVisionz conveyor belt vision processing server",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "migrate": "psql $DATABASE_URL -f src/db/schema.sql"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "ws": "^8.18.0",
+    "pg": "^8.13.0",
+    "redis": "^4.7.0",
+    "multer": "^1.4.5-lts.1",
+    "csv-parse": "^5.6.0",
+    "xlsx": "^0.18.5",
+    "sharp": "^0.33.0",
+    "uuid": "^10.0.0",
+    "dotenv": "^16.4.0",
+    "cors": "^2.8.5",
+    "openai": "^4.70.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "tsx": "^4.19.0",
+    "@types/express": "^5.0.0",
+    "@types/ws": "^8.5.0",
+    "@types/pg": "^8.11.0",
+    "@types/multer": "^1.4.12",
+    "@types/cors": "^2.8.17",
+    "@types/uuid": "^10.0.0",
+    "@types/node": "^22.0.0"
+  }
+}

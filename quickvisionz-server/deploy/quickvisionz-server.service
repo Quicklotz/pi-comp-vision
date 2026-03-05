@@ -1,0 +1,17 @@
+[Unit]
+Description=QuickVisionz Server
+After=network.target postgresql.service redis.service
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/var/www/quickvisionz-server
+ExecStart=/usr/bin/node dist/index.js
+Restart=on-failure
+RestartSec=5
+Environment=NODE_ENV=production
+Environment=PORT=3040
+EnvironmentFile=/var/www/quickvisionz-server/.env
+
+[Install]
+WantedBy=multi-user.target
